@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wealth Integrity Audit</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .app-container {
+            max-width: 450px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: #f1f5f9;
+        }
+        .input-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-bottom: 16px;
+        }
+        input {
+            transition: all 0.2s;
+        }
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-900">
+
+    <div class="app-container px-4 py-8">
+        <!-- App Header -->
+        <header class="mb-6 px-2 text-center">
+            <h1 class="text-2xl font-extrabold tracking-tight text-slate-900">Wealth Integrity Audit</h1>
+            <p class="text-slate-500 text-sm">Comprehensive Financial Blueprint</p>
+        </header>
+
+        <!-- Section 1: Timeline -->
+        <div class="input-card">
+            <h2 class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-4 flex items-center">
+                <span class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center mr-2 text-[10px]">1</span>
+                Timeline & Lifestyle
+            </h2>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Current Age</label>
+                    <input type="number" id="currentAge" value="30" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 font-semibold focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Work Exit Age</label>
+                    <input type="number" id="exitAge" value="60" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 font-semibold focus:outline-none">
+                </div>
+            </div>
+            <div>
+                <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Monthly Lifestyle Cost (₱)</label>
+                <div class="relative">
+                    <span class="absolute left-3 top-2.5 text-slate-400 font-medium">₱</span>
+                    <input type="text" id="monthlyCost" value="70,000" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 pl-7 pr-3 font-bold focus:outline-none text-blue-700 formatted-input">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Current Assets -->
+        <div class="input-card">
+            <h2 class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-4 flex items-center">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center mr-2 text-[10px]">2</span>
+                Current Wealth Assets
+            </h2>
+            <div class="space-y-4">
+                <div class="grid grid-cols-5 gap-3">
+                    <div class="col-span-3">
+                        <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase text-nowrap">Bank Savings (₱)</label>
+                        <input type="text" id="bankSavings" value="500,000" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 px-3 font-semibold focus:outline-none formatted-input">
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Int %</label>
+                        <input type="text" id="bankRate" value="3.5" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 px-3 font-semibold focus:outline-none">
+                    </div>
+                </div>
+                <div class="grid grid-cols-5 gap-3">
+                    <div class="col-span-3">
+                        <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Investments (₱)</label>
+                        <input type="text" id="invValue" value="100,000" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 px-3 font-semibold focus:outline-none formatted-input">
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Growth %</label>
+                        <input type="text" id="invRate" value="10.0" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 px-3 font-semibold focus:outline-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 & 4 Combined: Protection & Stress Test -->
+        <div class="input-card border-l-4 border-purple-500">
+            <h2 class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-4 flex items-center">
+                <span class="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center mr-2 text-[10px]">3</span>
+                Protection & Stress Test
+            </h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase text-red-600">Potential Medical Crisis (₱)</label>
+                    <input type="text" id="medicalCrisis" value="2,000,000" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 font-semibold focus:outline-none formatted-input">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Critical Illness Coverage (₱)</label>
+                    <input type="text" id="currentInsurance" value="0" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 font-semibold focus:outline-none formatted-input">
+                </div>
+                <div class="p-3 bg-purple-50 rounded-xl">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="text-[10px] text-purple-500 font-bold uppercase mb-1">Protection Gap</p>
+                            <p id="protectionGapDisplay" class="text-lg font-bold text-purple-700">₱0</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[10px] text-red-500 font-bold uppercase mb-1">Self-Insurance Penalty</p>
+                            <p class="text-sm font-bold text-red-600">₱<span id="monthlyPenaltyDisplay">0</span>/mo</p>
+                        </div>
+                    </div>
+                    <div class="pt-2 border-t border-purple-200">
+                        <p class="text-[9px] text-slate-500 font-medium leading-tight">
+                            <span class="text-red-600 font-bold uppercase">Opportunity Cost:</span> 
+                            Failing to cover this gap today costs you 
+                            <span id="gapFVDisplay" class="text-red-700 font-bold">₱0</span> 
+                            in future wealth at age <span class="exitAgeLabel">60</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Cash Flow Integrity -->
+        <div class="input-card">
+            <h2 class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-4 flex items-center">
+                <span class="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center mr-2 text-[10px]">4</span>
+                Cash Flow Integrity
+            </h2>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-medium text-slate-500 mb-1 uppercase">Total Monthly Income (₱)</label>
+                    <input type="text" id="monthlyIncome" value="100,000" class="w-full bg-slate-50 border border-slate-200 rounded-lg py-2.5 px-3 font-semibold focus:outline-none formatted-input">
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Available Surplus</p>
+                    <p id="surplusDisplay" class="text-lg font-bold">₱0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Action Plan Results -->
+        <div class="mt-8 mb-10">
+            <div class="bg-slate-900 rounded-[2rem] p-6 shadow-2xl shadow-blue-900/20 text-white">
+                <div class="text-center mb-6">
+                    <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Perpetual Wealth Target</p>
+                    <h3 id="targetDisplay" class="text-3xl font-bold">₱0</h3>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6 text-center border-y border-slate-800 py-4">
+                    <div class="border-r border-slate-800">
+                        <p class="text-slate-500 text-[9px] font-bold uppercase mb-1">Salary at <span class="exitAgeLabel">60</span></p>
+                        <p id="salaryAtRetirementDisplay" class="text-emerald-400 font-bold">₱0</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500 text-[9px] font-bold uppercase mb-1">Monthly Gap</p>
+                        <p id="gapDisplay" class="text-red-400 font-bold">₱0</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-5 text-center">
+                    <p class="text-blue-100 text-[10px] font-bold uppercase mb-1">Required Monthly Action</p>
+                    <h4 id="strategyDisplay" class="text-2xl font-extrabold mb-1">₱0</h4>
+                    <p class="text-blue-200/70 text-[10px]">Investment + Risk Mitigation Penalty</p>
+                </div>
+
+                <!-- Section 6: Key Takeaways -->
+                <div class="mt-6 pt-6 border-t border-slate-800">
+                    <h5 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Integrity Checklist</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center text-slate-300">
+                            <span id="checkWealth" class="mr-2">⚪</span> Wealth Target Funding
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <span id="checkRisk" class="mr-2">⚪</span> Risk Protection Coverage
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <span id="checkFlow" class="mr-2">⚪</span> Cash Flow Sustainability
+                        </li>
+                    </ul>
+                </div>
+                
+                <button onclick="shareResults()" class="w-full mt-6 py-3 bg-white/10 rounded-xl text-white text-xs font-semibold hover:bg-white/20 transition-all">
+                    Copy Action Plan
+                </button>
+            </div>
+        </div>
+        
+        <p class="text-center text-slate-400 text-[10px] px-10 pb-12">
+            Calculations based on 5% rule and standard compounding. Consult a professional for execution.
+        </p>
+    </div>
+
+    <script>
+        // Strip commas and return a valid number
+        function getRawValue(id) {
+            const el = document.getElementById(id);
+            if (!el) return 0;
+            const val = el.value.replace(/,/g, '');
+            return parseFloat(val) || 0;
+        }
+
+        function updateUI() {
+            // Raw Numerical Inputs
+            const currentAge = getRawValue('currentAge');
+            const exitAge = getRawValue('exitAge');
+            const bankRate = getRawValue('bankRate') / 100;
+            const invRate = getRawValue('invRate') / 100;
+
+            // Formatted Inputs
+            const monthlyCost = getRawValue('monthlyCost');
+            const bankSavings = getRawValue('bankSavings');
+            const invValue = getRawValue('invValue');
+            const medicalCrisis = getRawValue('medicalCrisis');
+            const currentInsurance = getRawValue('currentInsurance');
+            const monthlyIncome = getRawValue('monthlyIncome');
+
+            const yearsLeft = Math.max(0, exitAge - currentAge);
+            
+            // Labels
+            document.querySelectorAll('.exitAgeLabel').forEach(el => el.innerText = exitAge);
+
+            // 1. Wealth Target (5% Perpetual Rule)
+            const wealthTarget = (monthlyCost * 12) / 0.05;
+
+            // 2. Future Value of existing assets
+            const fvSavings = bankSavings * Math.pow((1 + bankRate), yearsLeft);
+            const fvInvestments = invValue * Math.pow((1 + invRate), yearsLeft);
+            
+            // 3. Protection Gap Impact (FV of Gap upon retirement based on Bank Interest Rate)
+            const protectionGap = Math.max(0, medicalCrisis - currentInsurance);
+            const gapFV = protectionGap * Math.pow((1 + bankRate), yearsLeft);
+            
+            // 4. Actual Projected Wealth (Assets FV - Gap FV)
+            // Deduct the Gap FV because a crisis today removes that "future" money from the equation.
+            const totalProjectedWealth = (fvSavings + fvInvestments) - gapFV;
+
+            // 5. Salary at Retirement (5% of Net Projected Wealth / 12 months)
+            const salaryAtRetirement = (totalProjectedWealth * 0.05) / 12;
+
+            // 6. Gap Analysis
+            const incomeGap = Math.max(0, monthlyCost - salaryAtRetirement);
+
+            // 7. Self-Insurance Penalty (The 5% Perpetual Rule applied to the Gap's Future Value)
+            // This represents the permanent monthly income loss if they self-insure the risk.
+            const monthlyPenalty = (gapFV * 0.05) / 12;
+
+            // 8. Monthly Investment Strategy (8% growth assumption to hit the Wealth Target)
+            const currentWealthFV = (fvSavings + fvInvestments);
+            const wealthShortfall = Math.max(0, wealthTarget - currentWealthFV);
+            
+            let monthlyInvestmentRequired = 0;
+            if (wealthShortfall > 0 && yearsLeft > 0) {
+                const r = 0.08 / 12; 
+                const n = yearsLeft * 12;
+                monthlyInvestmentRequired = wealthShortfall * (r / (Math.pow(1 + r, n) - 1));
+            }
+
+            // Total required action = Investment + Penalty
+            const totalRequiredMonthly = monthlyInvestmentRequired + monthlyPenalty;
+
+            // 9. Cash Flow Check
+            const surplus = monthlyIncome - monthlyCost;
+            
+            // Update UI Displays
+            document.getElementById('targetDisplay').innerText = '₱' + Math.round(wealthTarget).toLocaleString();
+            document.getElementById('salaryAtRetirementDisplay').innerText = '₱' + Math.max(0, Math.round(salaryAtRetirement)).toLocaleString();
+            document.getElementById('gapDisplay').innerText = '₱' + Math.round(incomeGap).toLocaleString();
+            document.getElementById('strategyDisplay').innerText = '₱' + Math.round(totalRequiredMonthly).toLocaleString();
+            document.getElementById('protectionGapDisplay').innerText = '₱' + Math.round(protectionGap).toLocaleString();
+            document.getElementById('gapFVDisplay').innerText = '₱' + Math.round(gapFV).toLocaleString();
+            document.getElementById('monthlyPenaltyDisplay').innerText = Math.round(monthlyPenalty).toLocaleString();
+            document.getElementById('surplusDisplay').innerText = '₱' + Math.round(surplus).toLocaleString();
+            
+            // Integrity Checklist Logic
+            document.getElementById('checkWealth').innerText = currentWealthFV >= wealthTarget ? '✅' : '❌';
+            document.getElementById('checkRisk').innerText = currentInsurance >= medicalCrisis ? '✅' : '❌';
+            document.getElementById('checkFlow').innerText = surplus >= totalRequiredMonthly ? '✅' : '⚠️';
+
+            // Coloring surplus
+            document.getElementById('surplusDisplay').className = surplus >= totalRequiredMonthly ? 'text-lg font-bold text-emerald-600' : 'text-lg font-bold text-amber-600';
+        }
+
+        // Add event listeners to all inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => {
+                // If it's a formatted field, handle the comma injection
+                if (input.classList.contains('formatted-input')) {
+                    let cursorPosition = input.selectionStart;
+                    let originalLength = input.value.length;
+                    let value = input.value.replace(/[^\d.]/g, '');
+                    let parts = value.split('.');
+                    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    if (parts.length > 2) parts = [parts[0], parts[1]];
+                    input.value = parts.join('.');
+                    let newLength = input.value.length;
+                    cursorPosition = cursorPosition + (newLength - originalLength);
+                    input.setSelectionRange(cursorPosition, cursorPosition);
+                }
+                updateUI();
+            });
+        });
+
+        function shareResults() {
+            const text = `Wealth Integrity Audit:\nWealth Target: ${document.getElementById('targetDisplay').innerText}\nProtection Gap: ${document.getElementById('protectionGapDisplay').innerText}\nRequired Monthly Action: ${document.getElementById('strategyDisplay').innerText}\nCash Flow: ${document.getElementById('surplusDisplay').innerText}`;
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert("Audit Summary copied to clipboard!");
+        }
+
+        // Initial trigger
+        window.onload = updateUI;
+    </script>
+</body>
+</html>
